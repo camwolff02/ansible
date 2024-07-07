@@ -1,0 +1,19 @@
+- name: Get the OS type
+  command: uname
+  register: os_out
+- set_fact:
+    os: "{{ os_out.stdout }}"
+
+- name: Get the system type
+  command: uname -m
+  register: sys_type_out
+- set_fact:
+    sys_type: "{{ sys_type_out.stdout }}"
+
+- name: Download Miniforge (preferred conda distribution)
+  get_url:
+    url: "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-{{ os }}-{{ sys_type }}.sh "
+    dest: "{{ playbook_path }}/manual_install/miniforge.sh"
+
+- name: Change file permissions for miniforge install script
+  file: dest="{{ playbook_path }}/manual_install/miniforge.sh" mode=a+x

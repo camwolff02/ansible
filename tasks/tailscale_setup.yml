@@ -1,0 +1,14 @@
+
+- name: Download Tailscale
+  get_url:
+    url: "https://tailscale.com/install.sh"
+    dest: /tmp/install.sh
+
+- name: Install Tailscale
+  become: true
+  command: sh /tmp/install.sh
+
+- name: Remove Tailscale .sh script
+  file:
+    path: /tmp/install.sh
+    state: absent

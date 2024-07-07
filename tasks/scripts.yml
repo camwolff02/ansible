@@ -1,0 +1,4 @@
+  - name: install tailscale VPN
+    get_url:
+    ansible.builtin.command: curl -fsSL https://tailscale.com/install.sh | sh 
+

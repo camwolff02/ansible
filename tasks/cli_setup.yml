@@ -1,0 +1,16 @@
+  - name: install required CLI utilities
+    apt:
+      name: 
+        - cmake
+        - curl
+        - gcc
+        - gh
+        - git
+        - make
+        - neofetch
+        - tree
+        - neovim
+    tags:
+      - latest
+
+
