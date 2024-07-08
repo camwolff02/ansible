@@ -1,0 +1,6 @@
+  - name: install required CLI utilities
+    snap:
+      name: 
+        - simplenote
+        - todoist
+

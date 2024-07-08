@@ -6,10 +6,11 @@
         - gcc
         - gh
         - git
+        - lua5.1
         - make
         - neofetch
         - tree
-        - neovim
+        #- neovim
     tags:
       - latest
 

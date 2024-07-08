@@ -1,5 +1,5 @@
 ---
-  - name: desktop_setup
+  - name: robotics_setup
     hosts: localhost
     become: true
 
@@ -16,9 +16,8 @@
           playbook_path: "{{ playbook_path_out.stdout }}"
 
       - include: tasks/cli_setup.yml
-      - include: tasks/neovim_setup.yml
         #- include: tasks/code_setup.yml
-        #- include: tasks/snap_setup.yml
+      - include: tasks/snap_setup.yml
         #- include: tasks/conda_setup.yml
         #- include: tasks/discord_setup.yml
         #- include: tasks/tailscale_setup.yml
