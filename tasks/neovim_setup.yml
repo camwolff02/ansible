@@ -9,10 +9,23 @@
     dest: /opt
     remote_src: yes
 
-- name: Add Neovim to path 
-  become_user: root
-  replace:
-    path: /etc/environment
-    regexp: 'PATH="(?!\/opt\/nvim-linux64/bin:)'
-    replace: 'PATH="/opt/nvim-linux64/bin:'
-  when: 
+#- name: Add Neovim to path 
+#  become_user: root
+#  replace:
+#    path: /etc/environment
+#    regexp: 'PATH="(?!\/opt\/nvim-linux64/bin:)'
+#    replace: 'PATH="/opt/nvim-linux64/bin:'
+
+- name: Add Neovim to path, set Neovim as editor so we can use sudoedit, and alias vim as neovim
+  blockinfile:
+    path: "/home/{{ user }}/.bashrc"
+    block: |
+      export PATH=/opt/nvim-linux64/bin:$PATH
+      export EDITOR=/opt/nvim-linux64/bin/nvim
+      alias vim=nvim
+
+- name: Clone packer plugin manager for Neovim
+  git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: "/home/{{ user }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    depth: 1

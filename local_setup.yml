@@ -3,6 +3,9 @@
     hosts: localhost
     become: true
 
+    vars:
+      user: "cam"
+
     pre_tasks:
       - name: Update repository index
         apt:
@@ -16,6 +19,7 @@
           playbook_path: "{{ playbook_path_out.stdout }}"
 
       - include: tasks/cli_setup.yml
+      - include: tasks/ros2_setup.yml
       #- include: tasks/spotify_setup.yml
       #- include: tasks/neovim_setup.yml
       #- include: tasks/code_setup.yml
@@ -23,3 +27,5 @@
       #- include: tasks/conda_setup.yml
       #- include: tasks/discord_setup.yml
       #- include: tasks/tailscale_setup.yml
+      #- include: tasks/ui_setup.yml
+      #- include: tasks/obs_setup.yml
