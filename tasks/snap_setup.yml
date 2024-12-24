@@ -1,6 +1,5 @@
-  - name: install required CLI utilities
+  - name: install applications using Snap
     snap:
       name: 
-        - simplenote
-        - todoist
+        - steam
 

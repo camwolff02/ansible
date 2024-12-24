@@ -10,7 +10,6 @@
         - make
         - neofetch
         - tree
-        #- neovim
     tags:
       - latest
 

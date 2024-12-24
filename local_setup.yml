@@ -18,14 +18,14 @@
       - set_fact:
           playbook_path: "{{ playbook_path_out.stdout }}"
 
-      - include: tasks/cli_setup.yml
-      - include: tasks/ros2_setup.yml
-      #- include: tasks/spotify_setup.yml
-      #- include: tasks/neovim_setup.yml
-      #- include: tasks/code_setup.yml
-      #- include: tasks/snap_setup.yml
-      #- include: tasks/conda_setup.yml
-      #- include: tasks/discord_setup.yml
-      #- include: tasks/tailscale_setup.yml
-      #- include: tasks/ui_setup.yml
-      #- include: tasks/obs_setup.yml
+      - import_tasks: tasks/cli_setup.yml
+      - import_tasks: tasks/spotify_setup.yml
+      - import_tasks: tasks/neovim_setup.yml
+      - import_tasks: tasks/code_setup.yml
+      - import_tasks: tasks/snap_setup.yml
+      - import_tasks: tasks/conda_setup.yml
+      - import_tasks: tasks/discord_setup.yml
+      - import_tasks: tasks/tailscale_setup.yml
+      - import_tasks: tasks/obs_setup.yml
+      - import_tasks: tasks/obsidian_setup.yml
+      #- import_tasks: tasks/ui_setup.yml
