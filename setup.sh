@@ -1,1 +1,1 @@
-ansible-playbook --ask-become-pass local_setup.yml 
+ansible-playbook --ask-become-pass setup.yml 

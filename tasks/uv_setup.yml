@@ -1,0 +1,13 @@
+- name: Install UV Python Package Manager
+  become: true
+  block:
+    - name: Ensure required dependencies are installed
+      package:
+        name:
+          - curl
+        state: present
+
+    - name: Download and install Rust using rustup
+      shell: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+      become: false

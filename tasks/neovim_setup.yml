@@ -1,13 +1,13 @@
-- name: Creates a directory for Neovim
-  file:
-    path: /opt
-    state: directory
+#- name: Creates a directory for Neovim
+#  file:
+#    path: /opt
+#    state: directory
 
-- name: Download and extract Neovim
-  unarchive: 
-    src: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-    dest: /opt
-    remote_src: yes
+#- name: Download and extract Neovim
+#  unarchive: 
+#    src: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+#    dest: /opt
+#    remote_src: yes
 
 #- name: Add Neovim to path 
 #  become_user: root

@@ -19,13 +19,16 @@
           playbook_path: "{{ playbook_path_out.stdout }}"
 
       - import_tasks: tasks/cli_setup.yml
-      - import_tasks: tasks/spotify_setup.yml
-      - import_tasks: tasks/neovim_setup.yml
-      - import_tasks: tasks/code_setup.yml
+      #- import_tasks: tasks/spotify_setup.yml
+      #- import_tasks: tasks/code_setup.yml  # TODO uncomment when figure out how to check if code is already installed
       - import_tasks: tasks/snap_setup.yml
       - import_tasks: tasks/conda_setup.yml
       - import_tasks: tasks/discord_setup.yml
       - import_tasks: tasks/tailscale_setup.yml
       - import_tasks: tasks/obs_setup.yml
       - import_tasks: tasks/obsidian_setup.yml
+      - import_tasks: tasks/zoom_setup.yml
+      - import_tasks: tasks/rust_setup.yml
+      - import_tasks: tasks/uv_setup.yml
+      - import_tasks: tasks/signal_setup.yml
       #- import_tasks: tasks/ui_setup.yml

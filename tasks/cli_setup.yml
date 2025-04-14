@@ -1,17 +1,29 @@
   - name: install required CLI utilities
     apt:
-      name: 
+      name:
         - cmake
+        - build-essential  # for isaac lab
         - curl
         - gcc
         - gh
         - git
-        - lua5.4
+        - lua5.4  # for neovim
         - make
-        - neofetch
-        - tree
+        - neofetch  # for getting distribution info
+        - tree  # for traversing file tree
+        - tmux  # terminal window service
         - openssh-client
         - openssh-server
+        - docker.io
+        - neovim
+        - ffmpeg  # file format conversions
+        - python3-venv
+        - libfuse2
+        - yt-dlp  # downloading youtube videos
+        - latexmk  # rendering latex documents
+        - texlive-latex-extra
+        - libudev-dev  # for espflash and cargo-espflash
+        - protobuf-compiler  # Google's Protocol Buffers
     tags:
       - latest
 

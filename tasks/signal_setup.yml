@@ -1,0 +1,27 @@
+- name: Download Signal's public signing key
+  ansible.builtin.get_url:
+    url: https://updates.signal.org/desktop/apt/keys.asc
+    dest: /tmp/signal-desktop-keyring.asc
+    mode: '0644'
+
+- name: Convert key to gpg format
+  ansible.builtin.command:
+    cmd: gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg /tmp/signal-desktop-keyring.asc
+  args:
+    creates: /usr/share/keyrings/signal-desktop-keyring.gpg
+
+- name: Add Signal repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main"
+    filename: signal-xenial
+    state: present
+
+- name: Update package database
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Signal Desktop
+  ansible.builtin.apt:
+    name: signal-desktop
+    state: present
+

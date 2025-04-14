@@ -5,3 +5,4 @@
 2. Install git
 3. Clone repository
 4. Run the playbook with setup.sh
+5. To finish conda setup, navigate to manual_install and run the script
