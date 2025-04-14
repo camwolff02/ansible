@@ -31,4 +31,5 @@
       - import_tasks: tasks/rust_setup.yml
       - import_tasks: tasks/uv_setup.yml
       - import_tasks: tasks/signal_setup.yml
+      #- import_tasks: tasks/ros2_setup.yml  # NOTE we don't always want this
       #- import_tasks: tasks/ui_setup.yml
