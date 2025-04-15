@@ -30,15 +30,10 @@
       - ros-humble-desktop
       - python3-colcon-common-extensions
       - python3-rosdep2
+      - ros-humble-foxglove-bridge
 
 - name: Enable ros2 in bashrc
   blockinfile:
     path: "/home/{{ user }}/.bashrc"
     block: |
       echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-
-- name: Install colcon
-  apt:
-    name: python3-colcon-common-extensions
-    update_cache: yes
-
