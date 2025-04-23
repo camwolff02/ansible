@@ -36,4 +36,4 @@
   blockinfile:
     path: "/home/{{ user }}/.bashrc"
     block: |
-      echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+      source /opt/ros/humble/setup.bash
