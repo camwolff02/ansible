@@ -24,6 +24,7 @@
         - texlive-latex-extra
         - libudev-dev  # for espflash and cargo-espflash
         - protobuf-compiler  # Google's Protocol Buffers
+        - net-tools  # for commands like arp
     tags:
       - latest
 
